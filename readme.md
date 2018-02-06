@@ -8,9 +8,11 @@ http://www.runoob.com/docker/windows-docker-install.html
 ## 二，安装kubectl
 #### for mac
 ```
-# mac 
-brew install kubectl
+# 安装 homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# mac 确保 
+brew install kubectl
 ```
 #### for windows
 ```
