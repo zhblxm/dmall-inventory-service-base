@@ -21,5 +21,19 @@ pipeline {
                 sh 'echo "clean..."'
             }
         }
+
+        stage('Docker image') {
+            steps{
+                sh './genImages.sh'
+            }
+        }
+
+        stage('Deploy to DEV') {
+            steps{
+                withCredentials([[$class: 'FileBinding', credentialsId: 'kubectl-config-file', variable: 'KUBECTL_CONFIG_FILE']]) {
+                    sh './deployToDEV.sh'
+                }
+            }
+        }
     }
 }
