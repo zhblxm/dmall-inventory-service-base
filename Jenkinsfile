@@ -9,20 +9,20 @@ pipeline {
     stages {
         stage('Build') {
             steps{
-                sh './gradlew clean build'
+                sh 'echo "build"'
             }
         }
 
         stage('Docker image') {
             steps{
-                sh './genImages.sh'
+                sh 'echo "image"'
             }
         }
 
         stage('Deploy to DEV') {
             steps{
                 withCredentials([[$class: 'FileBinding', credentialsId: 'kubectl-config-file', variable: 'KUBECTL_CONFIG_FILE']]) {
-                    sh './deployToDEV.sh'
+                    sh 'echo "deploy"'
                 }
             }
         }
