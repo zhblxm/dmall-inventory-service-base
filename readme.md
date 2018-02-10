@@ -1,25 +1,17 @@
 # 运行须知
 
-## 一，安装docker
-
-http://www.runoob.com/docker/windows-docker-install.html
-
-
-## 二，安装kubectl
-#### for mac
+## 安装如下软件
 ```
-# 安装 homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# mac 确保 
-brew install kubectl
-```
-#### for windows
+kubectl
+gradle
+docker
 ```
 
-# 管理员身份, 在 cmd 中先装 choco
-@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+## 一，配置本机HOSTS
 
-# 安装 kubectl
-choco install kubernetes-cli
+```
+52.196.163.18   master
+54.168.141.255  node1
+13.230.129.20   node2
+13.231.73.19    node3
 ```
