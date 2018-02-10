@@ -1,11 +1,13 @@
 pipeline {
     agent any
-    
+    triggers{
+          pollSCM('* * * * *')
+    }
     stages {
         stage('Build') {
             steps{
                 sh './gradlew build'
-                sh 'ls build /libs'
+                sh 'ls build/libs'
             }
         }
 
